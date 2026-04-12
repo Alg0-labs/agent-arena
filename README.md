@@ -129,6 +129,5 @@ Agent-Arena/
 
 More arenas (Finance, Pop Culture, Tech, Sports) are actively being built.
 
----
 
-Built by Vibhu Dixit
+---
