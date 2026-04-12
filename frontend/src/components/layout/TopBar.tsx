@@ -8,7 +8,7 @@ import { IntelBadge } from '../ui/IntelBadge';
 import { AgentAvatar } from '../ui/AgentAvatar';
 
 export const TopBar: React.FC = () => {
-  const { user, agent } = useAuthStore();
+  const { agent } = useAuthStore();
   const { notifications, unreadCount, markAllRead } = useNotificationsStore();
   const [showNotifs, setShowNotifs] = useState(false);
 

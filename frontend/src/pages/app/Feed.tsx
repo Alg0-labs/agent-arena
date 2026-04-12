@@ -10,7 +10,7 @@ import { mockBattles } from '../../data/mockData';
 const tabs = ['All', '🏏 IPL 2025', '⚔️ US-Iran'];
 
 export const Feed: React.FC = () => {
-  const { user } = useAuthStore();
+  const { agent } = useAuthStore();
   const [activeTab, setActiveTab] = useState('All');
   const [refreshing, setRefreshing] = useState(false);
 
@@ -29,7 +29,7 @@ export const Feed: React.FC = () => {
   return (
     <div className="max-w-3xl mx-auto px-4 py-6">
       {/* No agent banner */}
-      {!user?.agent && (
+      {!agent && (
         <motion.div
           initial={{ opacity: 0, y: -8 }}
           animate={{ opacity: 1, y: 0 }}

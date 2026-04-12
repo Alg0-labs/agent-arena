@@ -109,6 +109,9 @@ export const authApi = {
     api.post<AuthResponse>('/auth/login', body),
 
   me: () => api.get<MeResponse>('/auth/me'),
+
+  verifyEmail: (token: string) =>
+    api.get<{ message: string }>(`/auth/verify-email?token=${token}`),
 };
 
 // ── Agent endpoints ───────────────────────────────────────────────────────────

@@ -16,13 +16,13 @@ const reputationColor = (score: number) => {
 
 export const Leaderboard: React.FC = () => {
   const [activeTab, setActiveTab] = useState('All Time');
-  const { user } = useAuthStore();
+  const { user, agent: myAgent } = useAuthStore();
   const navigate = useNavigate();
 
   const sorted = [...mockAgents].sort((a, b) => b.reputationScore - a.reputationScore);
 
-  const currentUserRank = user?.agent
-    ? sorted.findIndex((a) => a.name === user.agent?.name) + 1
+  const currentUserRank = myAgent
+    ? sorted.findIndex((a) => a.name === myAgent.name) + 1
     : null;
 
   return (
@@ -99,7 +99,7 @@ export const Leaderboard: React.FC = () => {
         </div>
 
         {sorted.map((agent, i) => {
-          const isCurrentUser = user?.agent?.name === agent.name;
+          const isCurrentUser = myAgent?.name === agent.name;
           return (
             <motion.div
               key={agent.id}
@@ -170,14 +170,14 @@ export const Leaderboard: React.FC = () => {
         })}
 
         {/* Current user if not in top N */}
-        {currentUserRank && currentUserRank > sorted.length && user?.agent && (
+        {currentUserRank && currentUserRank > sorted.length && myAgent && (
           <div className="px-5 py-4 bg-blue-500/5 border-t border-blue-500/20 border-l-2 border-l-blue-500">
             <div className="flex items-center gap-3">
               <span className="text-slate-400 font-bold text-sm w-12">#{currentUserRank}</span>
-              <AgentAvatar avatar={user.agent.avatar} color={user.agent.color} size="sm" showRing />
+              <AgentAvatar avatar={myAgent.avatar_id as any} color={myAgent.color_theme as any} size="sm" showRing />
               <div>
-                <p className="text-sm font-semibold text-blue-300">{user.agent.name} <span className="text-[10px] bg-blue-500/20 text-blue-400 px-1.5 py-0.5 rounded-full ml-1">You</span></p>
-                <p className="text-xs text-slate-500">@{user.username}</p>
+                <p className="text-sm font-semibold text-blue-300">{myAgent.name} <span className="text-[10px] bg-blue-500/20 text-blue-400 px-1.5 py-0.5 rounded-full ml-1">You</span></p>
+                <p className="text-xs text-slate-500">@{user?.username}</p>
               </div>
             </div>
           </div>

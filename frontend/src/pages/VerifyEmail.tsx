@@ -22,11 +22,11 @@ export const VerifyEmail: React.FC = () => {
     }
 
     authApi.verifyEmail(token)
-      .then((res) => {
+      .then((res: { message: string }) => {
         setState('success');
         setMessage(res.message);
       })
-      .catch((e) => {
+      .catch((e: any) => {
         setState('error');
         setMessage(e.detail ?? 'Verification failed. The link may have expired.');
       });

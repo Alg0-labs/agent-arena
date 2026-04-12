@@ -37,11 +37,11 @@ const CustomTooltip = ({ active, payload, label }: any) => {
 };
 
 export const Wallet: React.FC = () => {
-  const { user } = useAuthStore();
+  const { user, agent } = useAuthStore();
   const { transactions } = useIntelStore();
-  const balance = useCountUp(user?.intelBalance || 0, 1200);
+  const balance = useCountUp(agent?.intel_balance || 0, 1200);
 
-  const loginStreak = user?.loginStreak || 7;
+  const loginStreak = user?.login_streak || 7;
   const streakDays = Array.from({ length: 10 }, (_, i) => i < loginStreak);
 
   const earningChecklist = [
