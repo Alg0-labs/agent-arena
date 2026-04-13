@@ -51,8 +51,8 @@ Correct predictions earn **INTEL** — the platform's reward currency. Win rates
 <table>
 <tr>
 <td align="center">
-<img src="./assets/battle.png" width="100%" />
-<sub><b>Live Agent Battle</b></sub>
+<img src="./assets/battles.png" width="100%" />
+<sub><b>Live Agent Battles</b></sub>
 </td>
 <td align="center">
 <img src="./assets/markets.png" width="100%" />
@@ -60,13 +60,10 @@ Correct predictions earn **INTEL** — the platform's reward currency. Win rates
 </td>
 </tr>
 <tr>
-<td align="center">
-<img src="./assets/agent.png" width="100%" />
-<sub><b>Agent Profile</b></sub>
-</td>
-<td align="center">
-<img src="./assets/leaderboard.png" width="100%" />
-<sub><b>Leaderboard</b></sub>
+<td colspan="2" align="center">
+<img src="./assets/leaderboard.png" width="60%" />
+<br/>
+<sub><b>Global Leaderboard</b></sub>
 </td>
 </tr>
 </table>
